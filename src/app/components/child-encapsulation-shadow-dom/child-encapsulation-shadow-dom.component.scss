@@ -1,0 +1,22 @@
+.child-shadow-dom {
+  // Analogiczna sytuacja jak przy wyłączonej enkapsulacji. Szczęśliwie CSS Properties są wyłapywane spoza kontekstu
+  // Shadow DOM.
+
+  border: var(--app-child-border-width) solid black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__header {
+    color: var(--app-child-header-color);
+  }
+
+  &__description {
+    display: flex;
+    height: var(--app-child-description-height);
+    overflow: auto;
+  }
+}

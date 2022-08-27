@@ -1,0 +1,28 @@
+:host {
+  // Bez problemu możemy deklarować te zmienne w :host, zostaną nadpisane przy okazji
+  // HostBinding(), ale zostają nam ładne podpowiedzi w IDE. Te wartości mogą też robić za wartości domyślne.
+
+  --app-child-border-width: 1px;
+  --app-child-description-height: 400px;
+  --app-child-header-color: black;
+}
+
+.child-emulated {
+  border: var(--app-child-border-width) solid black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__header {
+    color: var(--app-child-header-color);
+  }
+
+  &__description {
+    display: flex;
+    height: var(--app-child-description-height);
+    overflow: auto;
+  }
+}

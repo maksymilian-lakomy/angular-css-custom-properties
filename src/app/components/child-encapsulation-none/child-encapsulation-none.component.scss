@@ -1,0 +1,28 @@
+.child-none {
+  // Jeżeli zadeklarujemy zmienne tutaj, a klasa .child-none nie będzie przypisana do elementu Hosta, to mamy przyps.
+
+  // Deklaracja poniższych zmiennych nadpisze nam zmienne z elementu Hosta.
+
+  //--app-child-border-width: 1px;
+  //--app-child-border-radius: 4px;
+  //--app-child-description-height: 400px;
+  //--app-child-header-color: black;
+
+  border: var(--app-child-border-width) solid black;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  &__header {
+    color: var(--app-child-header-color);
+  }
+
+  &__description {
+    display: flex;
+    height: var(--app-child-description-height);
+    overflow: auto;
+  }
+}

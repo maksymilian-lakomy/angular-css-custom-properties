@@ -1,1 +1,51 @@
-<h1>Showcase</h1>
+<div class="root">
+  <h1>Showcase</h1>
+
+  <h2>Settings</h2>
+
+  <div class="root__settings">
+    <div>
+      <mat-label>Border width</mat-label>
+      <mat-slider [(ngModel)]="borderWidth" [min]="1" [max]="10"></mat-slider>
+    </div>
+
+    <div>
+      <mat-label>Description height</mat-label>
+      <mat-slider [(ngModel)]="descriptionHeight" [min]="1" [max]="100"></mat-slider>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Header color</mat-label>
+      <mat-select [(ngModel)]="headerColor">
+        <mat-option *ngFor="let color of ['black', 'red', 'blue', 'green']" [value]="color">
+          {{color}}
+        </mat-option>
+      </mat-select>
+
+    </mat-form-field>
+  </div>
+
+  <div class="root__examples">
+    <div>
+      <h2>Encapsulation: Emulated</h2>
+      <app-child-encapsulation-emulated [borderWidth]="borderWidth"
+                                        [descriptionHeight]="descriptionHeight"
+                                        [headerColor]="headerColor"></app-child-encapsulation-emulated>
+    </div>
+
+    <div>
+      <h2>Encapsulation: None</h2>
+      <app-child-encapsulation-none [borderWidth]="borderWidth"
+                                    [descriptionHeight]="descriptionHeight"
+                                    [headerColor]="headerColor"></app-child-encapsulation-none>
+    </div>
+
+    <div>
+      <h2>Encapsulation: ShadowDom</h2>
+      <app-child-encapsulation-shadow-dom [borderWidth]="borderWidth"
+                                          [descriptionHeight]="descriptionHeight"
+                                          [headerColor]="headerColor"></app-child-encapsulation-shadow-dom>
+    </div>
+  </div>
+
+</div>
